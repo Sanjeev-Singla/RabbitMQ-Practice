@@ -8,7 +8,7 @@ async function produceMessage(queue, message) {
         
         /**
          * create the exchange, take 3 parameters: exchange name, type of exchange, options
-         * durable: false means the exchange will not survive a broker restart
+         * durable: true means the exchange will survive a broker restart
          */
         await channel.assertExchange(exchangeName, 'topic', { durable: true });
 
@@ -16,8 +16,9 @@ async function produceMessage(queue, message) {
          * Here we did not create a queue explicitly. 
          * In topic exchange, queues are usually created and bound by consumers.
          * Because the producer only needs to publish messages to the exchange with appropriate routing keys.
+         * persistent: true means the exchange will survive a broker restart / crash
          */
-        channel.publish(exchangeName, queue, Buffer.from(JSON.stringify(message)));
+        channel.publish(exchangeName, queue, Buffer.from(JSON.stringify(message), { persistent: true }));
         console.log("Message sent to exchange:", message);
         
         setTimeout(() => { 
