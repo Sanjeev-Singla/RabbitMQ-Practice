@@ -1,5 +1,6 @@
 # RabbitMQ
-- Install Docker first into your system
+- Install Docker into your system
+- Follow the steps to install into the Ubuntu system [YOUTUBE VIDEO](https://www.youtube.com/watch?v=J4dZ2jcpiP0) 
 
 ## RabbitMQ Installation using Docker (Default Port: 5672, Port For UI: 15672):
 - Run Docker

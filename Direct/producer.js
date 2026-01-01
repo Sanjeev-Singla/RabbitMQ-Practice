@@ -31,6 +31,10 @@ async function produceMessages() {
         channel.publish(exchangeName, 'direct_email', Buffer.from(JSON.stringify(message)));
         console.log("Message sent to exchange:", message);
 
+        setTimeout(() => { 
+            connection.close();
+        }, 500);
+
     } catch (error) {
         console.error('Error in producer:', error);
     }
