@@ -1,4 +1,4 @@
-# RabbitMQ
+# 🐇RabbitMQ
 - Install Docker into your system
 - Follow the steps to install into the Ubuntu system [YOUTUBE VIDEO](https://www.youtube.com/watch?v=J4dZ2jcpiP0) 
 
